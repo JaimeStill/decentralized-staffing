@@ -1,0 +1,73 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "staffing-db-drop",
+            "command": "dotnet",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/src/staffing/server/Staffing.Data/"
+            },
+            "args": [
+                "ef",
+                "database",
+                "drop",
+                "-f",
+                "-s",
+                "../Staffing.Api"
+            ]
+        },{
+            "label": "staffing-db-seed",
+            "command": "dotnet",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/src/staffing/server/Staffing.DbCli"
+            },
+            "args": [
+                "run"
+            ]
+        },
+        {
+            "label": "staffing-db-update",
+            "command": "dotnet",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/src/staffing/server/Staffing.Data/"
+            },
+            "args": [
+                "ef",
+                "database",
+                "update",
+                "-s",
+                "../Staffing.Api"
+            ]
+        },
+        {
+            "label": "staffing-server-build",
+            "command": "dotnet",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/src/staffing/server"
+            },
+            "args": [
+                "build"
+            ]
+        },
+        {
+            "label": "staffing-server-run",
+            "command": "dotnet",
+            "type": "process",
+            "problemMatcher": "$msCompile",
+            "options": {
+                "cwd": "${workspaceFolder}/src/staffing/server/Staffing.Api/"
+            },
+            "presentation": {
+                "panel": "dedicated"            
+            },
+            "args": [
+                "watch",
+                "run"
+            ]
+        }
+    ]
+}
