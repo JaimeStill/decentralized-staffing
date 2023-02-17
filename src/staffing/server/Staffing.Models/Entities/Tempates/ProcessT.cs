@@ -9,4 +9,9 @@ public class ProcessT : Entity
 
     public Role Role { get; set; }
     public WorkflowT WorkflowT { get; set; }
+
+    public DeadlineT DeadlineT { get; set; }
+
+    public IEnumerable<RequirementT> RequirementTs { get; set; }
+    public IEnumerable<ReviewT> ReviewTs { get; set; }
 }

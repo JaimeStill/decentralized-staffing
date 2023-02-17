@@ -1,11 +1,10 @@
 namespace Staffing.Models.Entities;
 
-public class WorkflowT : Entity
+public class OrganizationUser : Base
 {
     public int OrganizationId { get; set; }
-    public string Description { get; set; }
+    public int UserId { get; set; }
 
     public Organization Organization { get; set; }
-
-    public IEnumerable<ProcessT> ProcessTs { get; set; }
+    public User User { get; set; }
 }

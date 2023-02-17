@@ -1,6 +1,6 @@
 namespace Staffing.Models.Entities;
 
-public class Registration : Entity
+public class Registration : KeyEntity
 {
-    public Guid Key { get; set; }
+    public IEnumerable<Token> Tokens { get; set; }
 }

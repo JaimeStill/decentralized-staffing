@@ -14,4 +14,11 @@ public class Process : Entity
     public Role Role { get; set; }
     public User User { get; set; }
     public Workflow Workflow { get; set; }
+
+    public Deadline Deadline { get; set; }
+
+    public IEnumerable<ProcessAttachment> Attachments { get; set; }
+    public IEnumerable<Note> Notes { get; set; }
+    public IEnumerable<Requirement> Requirements { get; set; }
+    public IEnumerable<Review> Reviews { get; set; }
 }
