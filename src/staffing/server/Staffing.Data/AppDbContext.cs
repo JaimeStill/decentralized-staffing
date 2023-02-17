@@ -28,7 +28,7 @@ public class AppDbContext : DbContext
                 .Cast<Entity>();
 
             foreach (Entity entity in entities)
-                entity.Complete();
+                entity.OnSaving();
         }
     }
 

@@ -3,7 +3,7 @@
 Considerations for implementation from past projects.
 
 - [ ] [Default value configurations](https://github.com/JaimeStill/data-conductor/blob/main/src/server/Conductor.Data/Config/ConnectorConfig.cs)
-- [ ] Build out [`tasks.json`](https://github.com/JaimeStill/data-conductor/blob/main/.vscode/tasks.json)
+- [x] Build out [`tasks.json`](https://github.com/JaimeStill/data-conductor/blob/main/.vscode/tasks.json)
 - [ ] Look at how data is [streamed](https://github.com/JaimeStill/distributed-architecture/blob/main/src/App.Services/PhotoService.cs#L54) from an [`IStreamService<T>`](https://github.com/JaimeStill/distributed-architecture/blob/main/src/Picsum.Services/PicsumStreamService.cs)
     * Consider how this feature could be broken apart from the `ServiceBase` hierarchy and instead built through composition (i.e. a service has a `IStreamService` feature vs. extends the functionality into the base service). Not every class has to be a service. Classes can provide their own [specialized functionality](https://github.com/JaimeStill/distributed-architecture/blob/main/src/Picsum/PicsumPhoto.cs) and be part of the service composition.
 - [ ] Consider how to expose [contracts](https://github.com/JaimeStill/distributed-architecture/tree/main/src/Platform.Contracts) between services.
