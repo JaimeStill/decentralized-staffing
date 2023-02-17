@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Staffing",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "staffing-server-build",
+            "cwd": "${workspaceFolder}/src/staffing/server/Staffing.Api",
+            "program": "bin/Debug/net7.0/Staffing.Api.dll",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        {
+            "name": "Debug Staffing DbCli",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "staffing-server-build",
+            "cwd": "${workspaceFolder}/src/staffing/server/Staffing.DbCli",
+            "program": "bin/Debug/net7.0/Staffing.DbCli.dll",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        }
+    ]
+}
