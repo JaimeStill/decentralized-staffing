@@ -11,4 +11,8 @@
     <ProjectReference Include="..\Staffing.Models\Staffing.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Soc.Api" Version="0.0.1" />
+  </ItemGroup>
+
 </Project>
