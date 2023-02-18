@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using Soc.Api.Core;
 using Soc.Api.Schema;
 
 namespace Soc.Api.Services;

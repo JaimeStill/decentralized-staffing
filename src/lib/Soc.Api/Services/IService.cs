@@ -1,10 +1,12 @@
+using Microsoft.EntityFrameworkCore;
 using Soc.Api.Core;
-using Soc.Api.Query;
 using Soc.Api.Schema;
 
 namespace Soc.Api.Services;
 
-public interface IService<T> where T : Base
+public interface IService<T, Db>
+    where T : Base
+    where Db : DbContext
 {
     Task<T> GetById(int id);
     Task<ValidationResult> Validate(T entity);

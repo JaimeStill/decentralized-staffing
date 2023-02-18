@@ -4,7 +4,7 @@ using Soc.Api.Schema;
 
 namespace Soc.Api.Services;
 
-public abstract class ApiService<T, Db> : IService<T>
+public abstract class BaseService<T, Db> : IService<T, Db>
     where T : Base
     where Db : DbContext
 {
@@ -16,7 +16,7 @@ public abstract class ApiService<T, Db> : IService<T>
     protected virtual Func<T, Task<T>> OnSave { get; set; }
     protected virtual Func<T, Task<T>> OnRemove { get; set; }
 
-    public ApiService(Db db)
+    public BaseService(Db db)
     {
         this.db = db;
         query = SetGraph(db.Set<T>());
@@ -67,11 +67,11 @@ public abstract class ApiService<T, Db> : IService<T>
 
     #region Public
 
-    public virtual Task<ValidationResult> Validate(T entity) =>
-        Task.FromResult(new ValidationResult());
-
     public virtual async Task<T> GetById(int id) =>
         await query.FirstOrDefaultAsync(x => x.Id == id);
+
+    public virtual Task<ValidationResult> Validate(T entity) =>
+        Task.FromResult(new ValidationResult());
 
     public async Task<ApiResult<T>> Save(T entity)
     {

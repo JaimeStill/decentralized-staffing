@@ -4,11 +4,13 @@ using Soc.Api.Schema;
 
 namespace Soc.Api.Services;
 
-public abstract class EntityService<T, Db> : ApiService<T, Db>
+public abstract class EntityService<T, Db> : BaseService<T, Db>
     where T : Entity
     where Db : DbContext
 {
     public EntityService(Db db) : base(db) { }
+
+    // !!!Build out Query infrastructure!!!!
 
     public virtual async Task<bool> ValidateName(T entity) =>
         !await db.Set<T>()
