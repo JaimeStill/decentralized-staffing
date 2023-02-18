@@ -2,11 +2,11 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "staffing-db-drop",
+            "label": "enterprise-db-drop",
             "command": "dotnet",
             "type": "shell",
             "options": {
-                "cwd": "${workspaceFolder}/src/staffing/server/Staffing.Data/"
+                "cwd": "${workspaceFolder}/src/enterprise/server/Enterprise.Data"
             },
             "args": [
                 "ef",
@@ -14,9 +14,63 @@
                 "drop",
                 "-f",
                 "-s",
-                "../Staffing.Api"
+                "../Enterprise.Api"
             ]
-        },{
+        },
+        {
+            "label": "enterprise-db-seed",
+            "command": "dotnet",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/src/enterprise/server/Enterprise.DbCli"
+            },
+            "args": [
+                "run"
+            ]
+        },
+        {
+            "label": "enterprise-db-update",
+            "command": "dotnet",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/src/enterprise/server/Enterprise.Data"
+            },
+            "args": [
+                "ef",
+                "database",
+                "update",
+                "-s",
+                "../Enterprise.Api"
+            ]
+        },
+        {
+            "label": "enterprise-server-build",
+            "command": "dotnet",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/src/enterprise/server"
+            },
+            "args": [
+                "build"
+            ]
+        },
+        {
+            "label": "enterprise-server-run",
+            "command": "dotnet",
+            "type": "process",
+            "problemMatcher": "$msCompile",
+            "options": {
+                "cwd": "${workspaceFolder}/src/enterprise/server/Enterprise.Api"
+            },
+            "presentation": {
+                "panel": "dedicated"            
+            },
+            "args": [
+                "watch",
+                "run"
+            ]
+        },
+        {
             "label": "staffing-db-seed",
             "command": "dotnet",
             "type": "shell",
@@ -32,7 +86,7 @@
             "command": "dotnet",
             "type": "shell",
             "options": {
-                "cwd": "${workspaceFolder}/src/staffing/server/Staffing.Data/"
+                "cwd": "${workspaceFolder}/src/staffing/server/Staffing.Data"
             },
             "args": [
                 "ef",
@@ -59,7 +113,7 @@
             "type": "process",
             "problemMatcher": "$msCompile",
             "options": {
-                "cwd": "${workspaceFolder}/src/staffing/server/Staffing.Api/"
+                "cwd": "${workspaceFolder}/src/staffing/server/Staffing.Api"
             },
             "presentation": {
                 "panel": "dedicated"            

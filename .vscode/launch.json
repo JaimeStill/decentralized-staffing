@@ -2,6 +2,30 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Debug Enterprise",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "enterprise-server-build",
+            "cwd": "${workspaceFolder}/src/enterprise/server/Enterprise.Api",
+            "program": "bin/Debug/net7.0/Enterprise.Api.dll",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        {
+            "name": "Debug Enterprise DbCli",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "enterprise-server-build",
+            "cwd": "${workspaceFolder}/src/enterprise/server/Enterprise.DbCli",
+            "program": "bin/Debug/net7.0/Enterprise.DbCli.dll",
+            "stopAtEntry": false,
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            }
+        },
+        {
             "name": "Debug Staffing",
             "type": "coreclr",
             "request": "launch",

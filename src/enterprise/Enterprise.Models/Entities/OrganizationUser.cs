@@ -1,4 +1,4 @@
-namespace Staffing.Models.Entities;
+namespace Enterprise.Models.Entities;
 
 public class OrganizationUser : Base
 {

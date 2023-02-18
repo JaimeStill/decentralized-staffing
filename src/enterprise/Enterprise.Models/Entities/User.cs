@@ -1,6 +1,6 @@
-namespace Staffing.Models.Entities;
+namespace Enterprise.Models.Entities;
 
-public class User : UrlEntity
+public class User : Entity
 {
     public string DisplayName { get; set; }
     public string LastName { get; set; }
