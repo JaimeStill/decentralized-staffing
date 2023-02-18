@@ -14,12 +14,6 @@ public class ProcessConfig : IEntityTypeConfiguration<Process>
             .HasForeignKey(x => x.RoleId);
 
         builder
-            .HasOne(x => x.User)
-            .WithMany(x => x.Processes)
-            .HasForeignKey(x => x.UserId)
-            .IsRequired(false);
-
-        builder
             .HasOne(x => x.Workflow)
             .WithMany(x => x.Processes)
             .HasForeignKey(x => x.WorkflowId);

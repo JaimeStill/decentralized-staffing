@@ -17,11 +17,5 @@ public class ReviewConfig : IEntityTypeConfiguration<Review>
             .HasOne(x => x.Role)
             .WithMany(x => x.Reviews)
             .HasForeignKey(x => x.RoleId);
-
-        builder
-            .HasOne(x => x.User)
-            .WithMany(x => x.Reviews)
-            .HasForeignKey(x => x.UserId)
-            .IsRequired(false);
     }
 }

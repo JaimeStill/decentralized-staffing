@@ -1,3 +1,5 @@
+using Soc.Api.Schema;
+
 namespace Enterprise.Models.Entities;
 
 public class OrganizationUser : Base

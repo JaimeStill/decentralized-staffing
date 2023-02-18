@@ -2,6 +2,7 @@
 
 Considerations for implementation from past projects.
 
+- [ ] Establish a way to link [Cross-Service Schema](./cross-service-schema.md) dependencies via a *URL* to the API endpoint instead of a *Navigation Property*.
 - [ ] [Default value configurations](https://github.com/JaimeStill/data-conductor/blob/main/src/server/Conductor.Data/Config/ConnectorConfig.cs)
 - [x] Build out [`tasks.json`](https://github.com/JaimeStill/data-conductor/blob/main/.vscode/tasks.json)
 - [ ] Look at how data is [streamed](https://github.com/JaimeStill/distributed-architecture/blob/main/src/App.Services/PhotoService.cs#L54) from an [`IStreamService<T>`](https://github.com/JaimeStill/distributed-architecture/blob/main/src/Picsum.Services/PicsumStreamService.cs)

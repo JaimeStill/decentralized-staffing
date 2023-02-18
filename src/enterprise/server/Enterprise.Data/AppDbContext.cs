@@ -1,6 +1,7 @@
 using Enterprise.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
+using Soc.Api.Schema;
 using System.Reflection;
 
 namespace Enterprise.Data;
@@ -10,6 +11,10 @@ public class AppDbContext : DbContext
     {
         SavingChanges += CompleteEntity;
     }
+
+    public DbSet<Organization> Organizations { get; set; }
+    public DbSet<OrganizationUser> OrganizationUsers { get; set; }
+    public DbSet<User> Users { get; set; }
 
     private IEnumerable<EntityEntry> ChangeTrackerEntities() =>
         ChangeTracker
@@ -28,7 +33,7 @@ public class AppDbContext : DbContext
                 .Cast<Entity>();
 
             foreach (Entity entity in entities)
-                entity.Complete();
+                entity.OnSaving();
         }
     }
 

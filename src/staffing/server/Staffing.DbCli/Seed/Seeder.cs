@@ -1,5 +1,5 @@
-using Staffing.Models.Entities;
 using Microsoft.EntityFrameworkCore;
+using Soc.Api.Schema;
 
 namespace Staffing.DbCli.Seed;
 public abstract class Seeder<E, C> where E : Entity where C : DbContext

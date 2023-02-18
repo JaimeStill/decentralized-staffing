@@ -1,5 +1,5 @@
-using Enterprise.Models.Entities;
 using Microsoft.EntityFrameworkCore;
+using Soc.Api.Schema;
 
 namespace Enterprise.DbCli.Seed;
 public abstract class Seeder<E, C> where E : Entity where C : DbContext

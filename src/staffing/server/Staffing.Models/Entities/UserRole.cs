@@ -1,3 +1,5 @@
+using Soc.Api.Schema;
+
 namespace Staffing.Models.Entities;
 
 public class UserRole : Base
@@ -6,5 +8,4 @@ public class UserRole : Base
     public int UserId { get; set; }
 
     public Role Role { get; set; }
-    public User User { get; set; }
 }

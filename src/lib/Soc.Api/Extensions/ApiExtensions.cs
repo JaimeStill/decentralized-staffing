@@ -1,5 +1,6 @@
-namespace Enterprise.Services.Extensions;
-public static class ServiceExtensions
+namespace Soc.Api.Extensions;
+
+public static class ApiExtensions
 {
     public static IQueryable<T> SetupSearch<T>(
         this IQueryable<T> values,
@@ -12,12 +13,11 @@ public static class ServiceExtensions
         {
             string[] searches = search.Split(split);
 
-            foreach (var s in searches)
+            foreach (string s in searches)
                 values = action(values, s.Trim());
 
             return values;
         }
-        else
             return action(values, search);
     }
 }

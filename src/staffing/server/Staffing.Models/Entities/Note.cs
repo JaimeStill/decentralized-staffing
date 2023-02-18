@@ -1,3 +1,5 @@
+using Soc.Api.Schema;
+
 namespace Staffing.Models.Entities;
 
 public class Note : Entity
@@ -7,5 +9,4 @@ public class Note : Entity
     public string Body { get; set; }
 
     public Process Process { get; set; }
-    public User User { get; set; }
 }

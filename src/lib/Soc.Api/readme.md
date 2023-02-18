@@ -32,3 +32,29 @@
     ```bash
     dotnet nuget push bin/Debug/Soc.Api.0.0.1.nupkg --source ~/packages
     ```
+
+### Project Integration
+
+Add the package to the following projects:
+
+* `{Project}.Api`
+* `{Project}.Data`
+* `{Project}.DbCli`
+* `{Project}.Models`
+* `{Project}.Services`
+
+```bash
+dotnet add package Soc.Api
+```
+
+Replaces the following infrastructure:
+
+* *{Project}.Api/Controllers/Base/\**
+* *{Project}.Models/Core/\**
+* *{Project}.Models/Entities/Base/\**
+* *{Project}.Models/Query/\**
+* *{Project}.Models/Validation/\**
+* *{Project}.Services/Api/Base/\**
+* *{Project}.Services/Exceptions/\**
+* *{Project}.Services/Extensions/\**
+* *{Project}.Services/Interfaces/\**

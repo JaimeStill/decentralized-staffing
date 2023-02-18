@@ -1,3 +1,5 @@
+using Soc.Api.Schema;
+
 namespace Staffing.Models.Entities;
 
 public class Process : Entity
@@ -12,7 +14,6 @@ public class Process : Entity
     public bool? IsRejected { get; set; }
 
     public Role Role { get; set; }
-    public User User { get; set; }
     public Workflow Workflow { get; set; }
 
     public Deadline Deadline { get; set; }

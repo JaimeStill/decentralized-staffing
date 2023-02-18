@@ -1,3 +1,5 @@
+using Soc.Api.Schema;
+
 namespace Staffing.Models.Entities;
 
 public abstract class Attachment : UrlEntity

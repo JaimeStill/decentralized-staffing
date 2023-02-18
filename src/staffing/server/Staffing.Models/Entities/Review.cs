@@ -1,3 +1,5 @@
+using Soc.Api.Schema;
+
 namespace Staffing.Models.Entities;
 
 public class Review : Entity
@@ -9,5 +11,4 @@ public class Review : Entity
 
     public Process Process { get; set; }
     public Role Role { get; set; }
-    public User User { get; set; }
 }

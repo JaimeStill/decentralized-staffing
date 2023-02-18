@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Soc.Api.Query;
 using Soc.Api.Schema;
 using Soc.Api.Services;
 
@@ -16,7 +17,9 @@ public abstract class EntityController<T, Db> : BaseController<T, Db>
         entitySvc = svc;
     }
 
-    // !!!Build out Query infrastructure!!!!
+    [HttpGet("[action]")]
+    public virtual async Task<IActionResult> Query([FromQuery]QueryParams queryParams) =>
+        Ok(await entitySvc.Query(queryParams));
 
     [HttpPost("[action]")]
     public virtual async Task<IActionResult> ValidateName([FromBody]T entity) =>
