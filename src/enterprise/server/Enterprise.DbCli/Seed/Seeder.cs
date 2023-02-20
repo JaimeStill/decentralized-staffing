@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Soc.Api.Schema;
 
 namespace Enterprise.DbCli.Seed;
-public abstract class Seeder<E, C> where E : Entity where C : DbContext
+public abstract class Seeder<E, C> where E : Base where C : DbContext
 {
     protected readonly C db;
 
