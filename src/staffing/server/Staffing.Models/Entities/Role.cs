@@ -4,6 +4,7 @@ namespace Staffing.Models.Entities;
 
 public class Role : UrlEntity
 {
+    public int OrganizationId { get; set; }
     public string Description { get; set; }
 
     public IEnumerable<Process> Processes { get; set; }
