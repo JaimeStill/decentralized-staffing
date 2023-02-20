@@ -3,14 +3,9 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <PackageId>Soc.Api</PackageId>
+    <PackageId>Soc.Contracts</PackageId>
     <Version>0.0.1</Version>
     <Authors>Jaime Still</Authors>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.3" />
-  </ItemGroup>
 
 </Project>
