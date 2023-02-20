@@ -55,6 +55,18 @@
             ]
         },
         {
+            "label": "enterprise-server-restore",
+            "command": "dotnet",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/src/enterprise/server"
+            },
+            "args": [
+                "restore",
+                "-f"
+            ]
+        },
+        {
             "label": "enterprise-server-run",
             "command": "dotnet",
             "type": "process",
@@ -121,6 +133,18 @@
             },
             "args": [
                 "build"
+            ]
+        },
+        {
+            "label": "staffing-server-restore",
+            "command": "dotnet",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/src/staffing/server"
+            },
+            "args": [
+                "restore",
+                "-f"
             ]
         },
         {
