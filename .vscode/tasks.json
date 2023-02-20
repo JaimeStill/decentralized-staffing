@@ -71,6 +71,22 @@
             ]
         },
         {
+            "label": "staffing-db-drop",
+            "command": "dotnet",
+            "type": "shell",
+            "options": {
+                "cwd": "${workspaceFolder}/src/staffing/server/Staffing.Data"
+            },
+            "args": [
+                "ef",
+                "database",
+                "drop",
+                "-f",
+                "-s",
+                "../Staffing.Api"
+            ]
+        },
+        {
             "label": "staffing-db-seed",
             "command": "dotnet",
             "type": "shell",

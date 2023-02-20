@@ -16,6 +16,7 @@ public class ReviewTConfig : IEntityTypeConfiguration<ReviewT>
         builder
             .HasOne(x => x.Role)
             .WithMany(x => x.ReviewTs)
-            .HasForeignKey(x => x.RoleId);        
+            .HasForeignKey(x => x.RoleId)
+            .OnDelete(DeleteBehavior.Restrict);        
     }
 }

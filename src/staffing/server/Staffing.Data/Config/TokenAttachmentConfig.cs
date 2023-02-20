@@ -11,6 +11,7 @@ public class TokenAttachmentConfig : IEntityTypeConfiguration<TokenAttachment>
         builder
             .HasOne(x => x.Token)
             .WithMany(x => x.Attachments)
-            .HasForeignKey(x => x.TokenId);
+            .HasForeignKey(x => x.TokenId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }
