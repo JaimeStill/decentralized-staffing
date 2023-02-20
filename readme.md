@@ -10,7 +10,6 @@ Run the [`pack.ps1`](./pack.ps1) to create the local NuGet source and pack all [
 
 Argument | Description | Default
 ---------|-------------|--------
-`-Lib` | The path to [`src/lib/`](./src/lib/) | `.\src\lib\`
 `-Source` | The location of the NuGet package source | `$env:userprofile\packages`
 `-SourceName` | The name of the NuGet package source | `SOC Packages`
 
@@ -44,5 +43,8 @@ Directory: C:\Users\{user}\packages
 
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
--a---           2/19/2023    20:15          22415 Soc.Api.0.0.1.nupkg
+-a---           2/20/2023 10:49 AM          22431 Soc.Api.0.0.1.nupkg
+-a---           2/20/2023 10:49 AM           4101 Soc.Contracts.0.0.1.nupkg
+-a---           2/20/2023 10:50 AM           3822 Soc.Enterprise.0.0.1.nupkg
+-a---           2/20/2023 10:50 AM           4476 Soc.Staffing.0.0.1.nupkg
 ```
