@@ -48,7 +48,7 @@ builder.Services.AddAppServices();
 var app = builder.Build();
 
 app.UseExceptionHandler(errorApp =>
-    errorApp.DetailedErrorHandler(app.Environment.IsDevelopment())
+    errorApp.DetailedErrorHandler()
 );
 
 

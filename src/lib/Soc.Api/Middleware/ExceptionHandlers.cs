@@ -21,7 +21,7 @@ public static class ExceptionHandlers
             await context.Response.WriteAsync($"Exception: {error.Error}");
         });
 
-    public static void DetailedErrorHandler(this IApplicationBuilder app, bool isDev) =>
+    public static void DetailedErrorHandler(this IApplicationBuilder app) =>
         app.Run(async context =>
         {
             IExceptionHandlerFeature error = context.Features.Get<IExceptionHandlerPathFeature>();
@@ -38,9 +38,11 @@ public static class ExceptionHandlers
                 remotePort = context.Connection.RemotePort.ToString() ?? "N/A",
                 contentType = context.Request.ContentType ?? "N/A",
                 url = context.Request.GetDisplayUrl(),
-                error = isDev
-                    ? error.Error.ToString()
-                    : "Something bad happened"
+                error = error.Error.Message ?? "Something bad happened",
+                source = error.Error.Source ?? "N/A",
+                type = error.Error.GetType().ToString() ?? "N/A",
+                path = error.Path ?? "N/A",
+                endpoint = error.Endpoint.DisplayName ?? "N/A"
             };
 
             await context.Response.WriteAsJsonAsync(response);
