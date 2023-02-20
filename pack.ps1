@@ -1,6 +1,9 @@
 param(
     [string]
     [Parameter()]
+    $Lib = ".\src\lib\",
+    [string]
+    [Parameter()]
     $Source = "$env:userprofile\packages\",
     [string]
     [Parameter()]
@@ -15,7 +18,7 @@ if (!(& dotnet nuget list source | ? { $_ -like "*$SourceName*" })) {
     & dotnet nuget add source $Source -n $SourceName
 }
 
-Get-ChildItem . -Directory | ForEach-Object {
+Get-ChildItem $Lib -Directory | ForEach-Object {
     if ($_.GetFiles('*.csproj')) {
         & dotnet pack $_ -o $Source
     }
