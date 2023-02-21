@@ -1,5 +1,6 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Soc.Api.Middleware;
 using Staffing.Data;
 using Staffing.Services.Api;
 using Microsoft.EntityFrameworkCore;
@@ -41,6 +42,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAppServices();
 
 var app = builder.Build();
+app.UseJsonExceptionHandler();
 app.UseSwagger();
 app.UseSwaggerUI();
 

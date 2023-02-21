@@ -47,12 +47,7 @@ builder.Services.AddAppServices();
 
 var app = builder.Build();
 
-app.UseExceptionHandler(errorApp =>
-    errorApp.DetailedErrorHandler()
-);
-
-
-// app.UseExceptionHandler(errorApp => //)
+app.UseJsonExceptionHandler();
 
 app.UseSwagger();
 app.UseSwaggerUI();

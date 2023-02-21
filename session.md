@@ -7,5 +7,5 @@ Todo:
 - [x] Integrate `Soc.Api` into `Enterprise` and `Staffing`.
 - [x] Remove `Enterprise` entities from `Staffing`.
 - [x] Finalize `Staffing` and `Enterprise` schemas with initial migrations.
-- [ ] Build out error handling middleware in `Soc.Api`.
+- [x] Build out error handling middleware in `Soc.Api`.
 - [ ] Build out services and controllers with `Soc.Api` infrastructure.
