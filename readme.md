@@ -6,11 +6,14 @@
 
 > The following step must be performed before the projects can be built and run.
 
-Run the [`pack.ps1`](./pack.ps1) to create the local NuGet source and pack all [`lib`](./src/lib) projects.
+Windows Script: [`pack-win.ps1`](./pack-win.ps1)  
+Linux Script: [`pack-linux.psq`](./pack-linux.ps1)  
+
+Run the relevant **pack** script above to create the local NuGet source and pack all [`lib`](./src/lib) projects.
 
 Argument | Description | Default
 ---------|-------------|--------
-`-Source` | The location of the NuGet package source | `$env:userprofile\packages`
+`-Source` | The location of the NuGet package source | `$env:userprofile\packages` or `~/packages/`
 `-SourceName` | The name of the NuGet package source | `SOC Packages`
 
 Ensure the source was created:
