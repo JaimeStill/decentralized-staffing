@@ -12,11 +12,11 @@
     <ProjectReference Include="..\Staffing.Data\Staffing.Data.csproj" />
     <ProjectReference Include="..\Staffing.Models\Staffing.Models.csproj" />
     <ProjectReference Include="..\Staffing.Services\Staffing.Services.csproj" />
+    <ProjectReference Include="..\..\..\lib\Soc.Api\Soc.Api.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.4" />
-    <PackageReference Include="Soc.Api" Version="0.0.1" />
   </ItemGroup>
 
   <ItemGroup>

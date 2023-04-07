@@ -10,7 +10,7 @@ param(
 $Lib = ".\src\lib\"
 
 # packages to pack
-$Packages = @("Soc.Api", "Soc.Contracts", "Soc.Enterprise", "Soc.Staffing")
+$Packages = @("Soc.Api", "Soc.Enterprise", "Soc.Staffing")
 
 # projects to restore
 $Projects = @(".\src\enterprise\server", ".\src\staffing\server");

@@ -1,4 +1,4 @@
-using Soc.Contracts;
+using Soc.Api.Contracts;
 
 namespace Soc.Staffing;
 

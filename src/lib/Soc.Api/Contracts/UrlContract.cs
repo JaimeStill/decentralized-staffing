@@ -1,4 +1,4 @@
-namespace Soc.Contracts;
+namespace Soc.Api.Contracts;
 
 public abstract class UrlContract : Contract
 {

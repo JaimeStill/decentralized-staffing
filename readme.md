@@ -47,7 +47,6 @@ Directory: C:\Users\{user}\packages
 Mode                 LastWriteTime         Length Name
 ----                 -------------         ------ ----
 -a---           2/20/2023 10:49 AM          22431 Soc.Api.0.0.1.nupkg
--a---           2/20/2023 10:49 AM           4101 Soc.Contracts.0.0.1.nupkg
 -a---           2/20/2023 10:50 AM           3822 Soc.Enterprise.0.0.1.nupkg
 -a---           2/20/2023 10:50 AM           4476 Soc.Staffing.0.0.1.nupkg
 ```

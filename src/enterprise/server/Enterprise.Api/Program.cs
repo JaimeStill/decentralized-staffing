@@ -1,11 +1,8 @@
-using static System.Net.Mime.MediaTypeNames;
-
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Enterprise.Data;
-using Microsoft.AspNetCore.Diagnostics;
-using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.EntityFrameworkCore;
+using Soc.Api.Graph;
 using Soc.Api.Middleware;
 using Soc.Api.Services;
 
@@ -40,6 +37,7 @@ builder
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddGraphService();
 builder.Services.AddAppServices();
 
 var app = builder.Build();
