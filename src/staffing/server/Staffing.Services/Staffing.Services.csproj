@@ -10,10 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Staffing.Data\Staffing.Data.csproj" />
     <ProjectReference Include="..\Staffing.Models\Staffing.Models.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Soc.Api" Version="0.0.1" />
+    <ProjectReference Include="..\..\..\lib\Soc.Api\Soc.Api.csproj" />
   </ItemGroup>
 
 </Project>

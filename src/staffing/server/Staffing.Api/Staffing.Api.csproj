@@ -11,6 +11,8 @@
     <ProjectReference Include="..\Staffing.Data\Staffing.Data.csproj" />
     <ProjectReference Include="..\Staffing.Models\Staffing.Models.csproj" />
     <ProjectReference Include="..\Staffing.Services\Staffing.Services.csproj" />
+    <ProjectReference Include="..\..\..\lib\Soc.Api\Soc.Api.csproj" />
+    <ProjectReference Include="..\..\..\lib\Soc.Enterprise\Soc.Enterprise.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,7 +20,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Soc.Api" Version="0.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 

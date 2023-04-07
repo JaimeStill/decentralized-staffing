@@ -1,9 +1,11 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Microsoft.EntityFrameworkCore;
+using Soc.Api.Graph;
 using Soc.Api.Middleware;
 using Soc.Api.Services;
+using Soc.Enterprise;
 using Staffing.Data;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,6 +41,8 @@ builder
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddGraphService();
+builder.Services.AddGraphClient<EnterpriseGraph>();
 builder.Services.AddAppServices();
 
 var app = builder.Build();
