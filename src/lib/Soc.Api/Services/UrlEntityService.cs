@@ -9,6 +9,6 @@ public abstract class UrlEntityService<T, Db> : EntityService<T, Db>
 {
     public UrlEntityService(Db db) : base(db) { }
 
-    public virtual async Task<T> GetByUrl(string url) =>
+    public virtual async Task<T?> GetByUrl(string url) =>
         await query.FirstOrDefaultAsync(x => x.Url.ToLower() == url.ToLower());
 }

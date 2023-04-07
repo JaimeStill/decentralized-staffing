@@ -16,37 +16,39 @@ public class AppDbContext : DbContext
 
     #region Core
 
-    public DbSet<Deadline> Deadlines { get; set; }
-    public DbSet<Note> Notes { get; set; }
-    public DbSet<Package> Packages { get; set; }
-    public DbSet<Process> Processes { get; set; }
-    public DbSet<Registration> Registrations { get; set; }
-    public DbSet<Requirement> Requirements { get; set; }
-    public DbSet<Resource> Resources { get; set; }
-    public DbSet<Review> Reviews { get; set; }
-    public DbSet<Role> Roles { get; set; }
-    public DbSet<Token> Tokens { get; set; }
-    public DbSet<UserRole> UserRoles { get; set; }
-    public DbSet<Workflow> Workflows { get; set; }
+    public DbSet<Approval> Approvals => Set<Approval>();
+    public DbSet<Deadline> Deadlines => Set<Deadline>();
+    public DbSet<Note> Notes => Set<Note>();
+    public DbSet<Package> Packages => Set<Package>();
+    public DbSet<Process> Processes => Set<Process>();
+    public DbSet<Registration> Registrations => Set<Registration>();
+    public DbSet<Requirement> Requirements => Set<Requirement>();
+    public DbSet<Resource> Resources => Set<Resource>();
+    public DbSet<Review> Reviews => Set<Review>();
+    public DbSet<Role> Roles => Set<Role>();
+    public DbSet<Token> Tokens => Set<Token>();
+    public DbSet<UserRole> UserRoles => Set<UserRole>();
+    public DbSet<Workflow> Workflows => Set<Workflow>();
 
     #endregion
 
     #region Attachments
 
-    public DbSet<Attachment> Attachments { get; set; }
-    public DbSet<PackageAttachment> PackageAttachments { get; set; }
-    public DbSet<ProcessAttachment> ProcessAttachments { get; set; }
-    public DbSet<TokenAttachment> TokenAttachments { get; set; }
+    public DbSet<Attachment> Attachments => Set<Attachment>();
+    public DbSet<PackageAttachment> PackageAttachments => Set<PackageAttachment>();
+    public DbSet<ProcessAttachment> ProcessAttachments => Set<ProcessAttachment>();
+    public DbSet<TokenAttachment> TokenAttachments => Set<TokenAttachment>();
 
     #endregion
 
     #region Templates
 
-    public DbSet<DeadlineT> DeadlineTs { get; set; }
-    public DbSet<ProcessT> ProcessTs { get; set; }
-    public DbSet<RequirementT> RequirementTs { get; set; }
-    public DbSet<ReviewT> ReviewTs { get; set; }
-    public DbSet<WorkflowT> WorkflowTs { get; set; }
+    public DbSet<ApprovalT> ApprovalTs => Set<ApprovalT>();
+    public DbSet<DeadlineT> DeadlineTs => Set<DeadlineT>();
+    public DbSet<ProcessT> ProcessTs => Set<ProcessT>();
+    public DbSet<RequirementT> RequirementTs => Set<RequirementT>();
+    public DbSet<ReviewT> ReviewTs => Set<ReviewT>();
+    public DbSet<WorkflowT> WorkflowTs => Set<WorkflowT>();
 
     #endregion
 
@@ -60,7 +62,7 @@ public class AppDbContext : DbContext
     private bool EntitiesChanged() =>
         ChangeTrackerEntities().Any();
 
-    private void CompleteEntity(object sender, SavingChangesEventArgs e)
+    private void CompleteEntity(object? sender, SavingChangesEventArgs e)
     {
         if (EntitiesChanged())
         {

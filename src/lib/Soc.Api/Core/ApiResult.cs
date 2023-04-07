@@ -2,7 +2,7 @@ namespace Soc.Api.Core;
 
 public class ApiResult<T>
 {
-    public T Data { get; set; }
+    public T? Data { get; set; }
     public string Message { get; set; }
     public bool Error { get; set; }
 

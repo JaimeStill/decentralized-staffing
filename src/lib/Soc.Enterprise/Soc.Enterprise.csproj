@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
     <PackageId>Soc.Enterprise</PackageId>
     <Version>0.0.1</Version>
     <Authors>Jaime Still</Authors>

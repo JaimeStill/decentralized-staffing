@@ -11,6 +11,7 @@ public class PackageAttachmentConfig : IEntityTypeConfiguration<PackageAttachmen
         builder
             .HasOne(x => x.Package)
             .WithMany(x => x.Attachments)
-            .HasForeignKey(x => x.PackageId);
+            .HasForeignKey(x => x.PackageId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

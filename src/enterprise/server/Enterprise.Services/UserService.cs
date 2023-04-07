@@ -1,10 +1,10 @@
 using Enterprise.Data;
 using Enterprise.Models.Entities;
-using Microsoft.EntityFrameworkCore;
+using Soc.Api.Core;
 using Soc.Api.Services;
 
 namespace Enterprise.Services;
-public class UserService : EntityService<User>
+public class UserService : EntityService<User, AppDbContext>
 {
     public UserService(AppDbContext db) : base (db) { }
     

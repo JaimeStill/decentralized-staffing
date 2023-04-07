@@ -3,9 +3,9 @@ using Soc.Api.Core;
 namespace Soc.Api.Schema;
 public abstract class Entity : Base
 {
-    public string Name { get; set; }
-    public string DateCreated { get; set; }
-    public string LastModified { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string DateCreated { get; set; } = string.Empty;
+    public string LastModified { get; set; } = string.Empty;
 
     public virtual void OnSaving()
     {

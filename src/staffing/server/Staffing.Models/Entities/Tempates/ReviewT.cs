@@ -7,6 +7,6 @@ public class ReviewT : Entity
     public int ProcessTId { get; set; }
     public int RoleId { get; set; }
 
-    public ProcessT ProcessT { get; set; }
-    public Role Role { get; set; }
+    public ProcessT? ProcessT { get; set; }
+    public Role? Role { get; set; }
 }

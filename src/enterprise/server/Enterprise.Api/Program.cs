@@ -3,11 +3,11 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Enterprise.Data;
-using Enterprise.Services.Api;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.EntityFrameworkCore;
 using Soc.Api.Middleware;
+using Soc.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,10 +19,7 @@ builder
             policy.AllowAnyOrigin();
             policy.AllowAnyHeader();
             policy.AllowAnyMethod();
-            policy.WithExposedHeaders(
-                "Content-Disposition",
-                "Access-Control-Allow-Origin"
-            );
+            policy.WithExposedHeaders("Access-Control-Allow-Origin");
         })
     );
 
@@ -46,6 +43,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddAppServices();
 
 var app = builder.Build();
+
+app.UseStaticFiles();
 
 app.UseJsonExceptionHandler();
 

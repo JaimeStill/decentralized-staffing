@@ -12,5 +12,10 @@ public class ProcessTConfig : IEntityTypeConfiguration<ProcessT>
             .HasOne(x => x.Role)
             .WithMany(x => x.ProcessTs)
             .HasForeignKey(x => x.RoleId);
+
+        builder
+            .HasOne(x => x.WorkflowT)
+            .WithMany(x => x.ProcessTs)
+            .HasForeignKey(x => x.WorkflowTId);
     }
 }

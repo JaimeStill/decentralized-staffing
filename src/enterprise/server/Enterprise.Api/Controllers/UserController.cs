@@ -1,4 +1,4 @@
-using EnterpriseData;
+using Enterprise.Data;
 using Enterprise.Models.Entities;
 using Enterprise.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -9,15 +9,15 @@ namespace Enterprise.Api.Controllers;
 [Route("api/[controller]")]
 public class UserController : EntityController<User, AppDbContext>
 {
-    readonly UserService userSvc;
+    readonly UserService svc;
 
     public UserController(UserService svc)
         : base (svc)
     {
-        userSvc = svc;
+        this.svc = svc;
     }
 
     [HttpGet("[action]/{orgId:int}/{userId:int}")]
     public async Task<IActionResult> JoinOrganization([FromRoute]int orgId, [FromRoute]int userId) =>
-        Ok(await userSvc.JoinOrganization(orgId, userId));
+        Ok(await svc.JoinOrganization(orgId, userId));
 }
