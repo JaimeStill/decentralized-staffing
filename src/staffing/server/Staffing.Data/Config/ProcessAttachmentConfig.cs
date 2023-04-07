@@ -11,6 +11,7 @@ public class ProcessAttachmentConfig : IEntityTypeConfiguration<ProcessAttachmen
         builder
             .HasOne(x => x.Process)
             .WithMany(x => x.Attachments)
-            .HasForeignKey(x => x.ProcessId);
+            .HasForeignKey(x => x.ProcessId)
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

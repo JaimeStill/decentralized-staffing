@@ -51,7 +51,7 @@ public static class QueryProcessor
         return result.Cast<T>();
     }
 
-    static (Type declaringType, PropertyInfo property) GetPropertyInfoRecursively<T>(this IQueryable<T> queryable, string propName)
+    static (Type? declaringType, PropertyInfo? property) GetPropertyInfoRecursively<T>(this IQueryable<T> queryable, string propName)
     {
         var nameParts = propName.Split('.');
 

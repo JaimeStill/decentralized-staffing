@@ -4,5 +4,5 @@ public class TokenAttachment : Attachment
 {
     public int TokenId { get; set; }
 
-    public Token Token { get; set; }
+    public Token? Token { get; set; }
 }

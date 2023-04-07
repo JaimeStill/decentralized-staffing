@@ -9,6 +9,6 @@ public class Review : Entity
     public int? UserId { get; set; }
     public bool? Concur { get; set; }
 
-    public Process Process { get; set; }
-    public Role Role { get; set; }
+    public Process? Process { get; set; }
+    public Role? Role { get; set; }
 }

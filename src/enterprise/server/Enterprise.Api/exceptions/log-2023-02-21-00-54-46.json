@@ -1,0 +1,14 @@
+{
+  "ContentType": "N/A",
+  "Endpoint": "Enterprise.Api.Controllers.OrganizationController.GenerateException (Enterprise.Api)",
+  "Error": "Testing exception middleware",
+  "ErrorPath": "/api/Organization/GenerateException/Testing exception middleware",
+  "LocalIp": "::1",
+  "LocalPort": "5000",
+  "RemoteIp": "::1",
+  "RemotePort": "56514",
+  "Source": "Enterprise.Services",
+  "Type": "System.Exception",
+  "Url": "http://localhost:5000/api/Organization/GenerateException/Testing exception middleware",
+  "User": "N/A"
+}

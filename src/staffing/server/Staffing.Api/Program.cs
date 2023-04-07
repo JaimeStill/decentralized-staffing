@@ -1,8 +1,8 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using Soc.Api.Middleware;
+using Soc.Api.Services;
 using Staffing.Data;
-using Staffing.Services.Api;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

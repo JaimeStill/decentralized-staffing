@@ -23,17 +23,17 @@ public class JsonExceptionData
     public JsonExceptionData(HttpContext context, IExceptionHandlerFeature error)
     {
         ContentType = context.Request.ContentType ?? "N/A";
-        Endpoint = error.Endpoint.DisplayName ?? "N/A";
+        Endpoint = error.Endpoint?.DisplayName ?? "N/A";
         Error = error.Error.Message ?? "An exception occurred processing the request";
         ErrorPath = error.Path ?? "N/A";
-        LocalIp = context.Connection.LocalIpAddress.ToString() ?? "N/A";
+        LocalIp = context.Connection.LocalIpAddress?.ToString() ?? "N/A";
         LocalPort = context.Connection.LocalPort.ToString() ?? "N/A";
-        RemoteIp = context.Connection.RemoteIpAddress.ToString() ?? "N/A";
+        RemoteIp = context.Connection.RemoteIpAddress?.ToString() ?? "N/A";
         RemotePort = context.Connection.RemotePort.ToString() ?? "N/A";
         Source = error.Error.Source ?? "N/A";
         Type = error.Error.GetType().ToString() ?? "N/A";
         Url = context.Request.GetDisplayUrl();
-        User = context.User.Identity.Name ?? "N/A";
+        User = context.User.Identity?.Name ?? "N/A";
     }
 
     public async Task LogError(string path)

@@ -1,0 +1,14 @@
+{
+  "ContentType": "N/A",
+  "Endpoint": "Enterprise.Api.Controllers.OrganizationController.GenerateException (Enterprise.Api)",
+  "Error": "testicles",
+  "ErrorPath": "/api/organization/generateException/testicles",
+  "LocalIp": "::1",
+  "LocalPort": "5000",
+  "RemoteIp": "::1",
+  "RemotePort": "56517",
+  "Source": "Enterprise.Services",
+  "Type": "System.Exception",
+  "Url": "http://localhost:5000/api/organization/generateException/testicles",
+  "User": "N/A"
+}

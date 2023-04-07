@@ -12,9 +12,9 @@ public class AppDbContext : DbContext
         SavingChanges += CompleteEntity;
     }
 
-    public DbSet<Organization> Organizations { get; set; }
-    public DbSet<OrganizationUser> OrganizationUsers { get; set; }
-    public DbSet<User> Users { get; set; }
+    public DbSet<Organization> Organizations => Set<Organization>();
+    public DbSet<OrganizationUser> OrganizationUsers => Set<OrganizationUser>();
+    public DbSet<User> Users => Set<User>();
 
     private IEnumerable<EntityEntry> ChangeTrackerEntities() =>
         ChangeTracker
@@ -24,7 +24,7 @@ public class AppDbContext : DbContext
     private bool EntitiesChanged() =>
         ChangeTrackerEntities().Any();
 
-    private void CompleteEntity(object sender, SavingChangesEventArgs e)
+    private void CompleteEntity(object? sender, SavingChangesEventArgs e)
     {
         if (EntitiesChanged())
         {

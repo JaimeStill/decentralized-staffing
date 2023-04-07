@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Soc.Api.Core;
+using Soc.Api.Query;
 using Soc.Api.Schema;
 
 namespace Soc.Api.Services;
@@ -11,10 +12,10 @@ public abstract class BaseService<T, Db> : IService<T, Db>
     protected Db db;
     protected IQueryable<T> query;
 
-    protected virtual Func<T, Task<T>> OnAdd { get; set; }
-    protected virtual Func<T, Task<T>> OnUpdate { get; set; }
-    protected virtual Func<T, Task<T>> OnSave { get; set; }
-    protected virtual Func<T, Task<T>> OnRemove { get; set; }
+    protected virtual Func<T, Task<T>>? OnAdd { get; set; }
+    protected virtual Func<T, Task<T>>? OnUpdate { get; set; }
+    protected virtual Func<T, Task<T>>? OnSave { get; set; }
+    protected virtual Func<T, Task<T>>? OnRemove { get; set; }
 
     public BaseService(Db db)
     {
@@ -67,7 +68,15 @@ public abstract class BaseService<T, Db> : IService<T, Db>
 
     #region Public
 
-    public virtual async Task<T> GetById(int id) =>
+    public virtual async Task<List<E>> Get<E>(
+        IQueryable<E> queryable,
+        string sort = "Id"
+    ) where E : Base =>
+        await queryable
+            .ApplySorting(new QueryOptions { Sort = sort })
+            .ToListAsync();
+
+    public virtual async Task<T?> GetById(int id) =>
         await query.FirstOrDefaultAsync(x => x.Id == id);
 
     public virtual Task<ValidationResult> Validate(T entity) =>

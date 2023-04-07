@@ -9,7 +9,7 @@ public abstract class KeyEntityService<T, Db> : UrlEntityService<T, Db>
 {
     public KeyEntityService(Db db) : base(db) { }
 
-    public async Task<T> GetByKey(Guid key) =>
+    public async Task<T?> GetByKey(Guid key) =>
         await query.FirstOrDefaultAsync(x => x.Key == key);
 
     protected override Func<T, Task<T>> OnAdd => async (T entity) =>

@@ -18,21 +18,24 @@ public class JsonExceptionMiddleware
 
     public async Task InvokeAsync(HttpContext context, IConfiguration config, IWebHostEnvironment env)
     {
-        IExceptionHandlerFeature error = context.Features.Get<IExceptionHandlerFeature>();
+        IExceptionHandlerFeature? error = context.Features.Get<IExceptionHandlerFeature>();
 
-        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
-        context.Response.ContentType = Application.Json;
+        if (error is not null)
+        {
+            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+            context.Response.ContentType = Application.Json;
 
-        JsonExceptionData response = new(context, error);
-        await context.Response.WriteAsJsonAsync(response);
-        await response.LogError(InitializeLogPath(config, env));
-        
+            JsonExceptionData response = new(context, error);
+            await context.Response.WriteAsJsonAsync(response);
+            await response.LogError(InitializeLogPath(config, env));
+        }
+
         await next(context);
     }
 
     static string InitializeLogPath(IConfiguration config, IWebHostEnvironment env)
     {
-        string path = config.GetValue<string>("JsonExceptionLogPath")
+        string path = config.GetValue<string>("ErrorLogPath")
             ?? Path.Join(env.WebRootPath, "exceptions");
 
         if (!Path.Exists(path))
