@@ -13,8 +13,12 @@ public abstract class BaseController<T, Db> : ControllerBase
 
     public BaseController(IService<T, Db> svc)
     {
-        this.baseSvc = svc;
+        baseSvc = svc;
     }
+
+    [HttpGet("[action]/{sort?}")]
+    public virtual async Task<IActionResult> Get([FromRoute] string? sort) =>
+        Ok(await baseSvc.Get(sort));
 
     [HttpGet("[action]/{id:int}")]
     public virtual async Task<IActionResult> GetById([FromRoute]int id) =>

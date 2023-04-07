@@ -8,6 +8,7 @@ public interface IService<T, Db>
     where T : Base
     where Db : DbContext
 {
+    Task<List<T>> Get(string? sort);
     Task<T?> GetById(int id);
     Task<ValidationResult> Validate(T entity);
     Task<ApiResult<T>> Save(T entity);

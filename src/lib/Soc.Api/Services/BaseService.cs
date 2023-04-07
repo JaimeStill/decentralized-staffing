@@ -28,6 +28,14 @@ public abstract class BaseService<T, Db> : IService<T, Db>
     protected virtual IQueryable<T> SetGraph(DbSet<T> data) =>
         data;
 
+    protected async Task<List<E>> Get<E>(
+        IQueryable<E> queryable,
+        string sort = "Id"
+    ) where E : Base =>
+        await queryable
+            .ApplySorting(new QueryOptions { Sort = sort })
+            .ToListAsync();
+
     protected async Task<ApiResult<T>> Add(T entity)
     {
         try
@@ -68,13 +76,8 @@ public abstract class BaseService<T, Db> : IService<T, Db>
 
     #region Public
 
-    public virtual async Task<List<E>> Get<E>(
-        IQueryable<E> queryable,
-        string sort = "Id"
-    ) where E : Base =>
-        await queryable
-            .ApplySorting(new QueryOptions { Sort = sort })
-            .ToListAsync();
+    public virtual async Task<List<T>> Get(string? sort) =>
+        await Get(query, sort ?? "Id");
 
     public virtual async Task<T?> GetById(int id) =>
         await query.FirstOrDefaultAsync(x => x.Id == id);
